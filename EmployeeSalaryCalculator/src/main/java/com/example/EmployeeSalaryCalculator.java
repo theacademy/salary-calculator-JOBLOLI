@@ -16,7 +16,7 @@ public class EmployeeSalaryCalculator
 	static int overTimePay;
 	static int grossSalary;
 	
-	public static void main(String[] args) 
+	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
@@ -59,20 +59,31 @@ public class EmployeeSalaryCalculator
 				if(HW <= standardWorkingHours)
 				{
 					//YOUR CODE STARTS HERE
-					 
+
+					overTime = 0;
+					overTimeRate = 0;
+					overTimePay = 0;
+					basicPay = HW * HR;
+					grossSalary = basicPay;
 
 					//YOUR CODE ENDS HERE
 				}
 				else
 				{
 					//YOUR CODE STARTS HERE
- 
+
+					overTime = HW - standardWorkingHours;
+					overTimeRate = HR * 2;
+					overTimePay = overTime * overTimeRate;
+
+					basicPay = standardWorkingHours * HR;
+					grossSalary = basicPay + overTimePay;
 
 					//YOUR CODE ENDS HERE
 				}
 				return grossSalary;
 	}
-	
+
 	static void displayPaySlip()
 	{
 		
